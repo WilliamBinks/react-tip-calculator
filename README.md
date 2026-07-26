@@ -1,16 +1,26 @@
-# React + Vite
+# Tip Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React-JavaScript tip calculator. Enter your bill, pick a tip percentage (or type a custom one), and the tip amount and total update instantly.
 
-Currently, two official plugins are available:
+**Demo Link** --> https://react-tip-calculator-mauve.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Tip Calculator demo](src/assets/screenshot.png)
 
-## React Compiler
+## Features
+- Enter a bill amount with a controlled number input
+- Preset tip buttons for 10%, 15%, and 20%
+- Custom tip input for any percentage
+- Tip amount and total calculate live as the bill or tip changes
+- Amounts are derived from state, so the display is always in sync
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
+- HTML5 / CSS3
+- Vite React
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## What I learned
+Building this app helped me deepen my understanding of React and how data flows through a component tree. Specifically I learned to:
+- Keep a single source of truth by storing only the raw inputs (bill and tip percentage) in state
+- Derive values (tip amount and total) during render instead of storing them, avoiding stale state
+- Break a UI into small, reusable components (`TipButton`, `CustomTip`) and compose them
+- Pass data and callbacks between components via props
+- Build controlled inputs and handle user input with the `useState` hook
